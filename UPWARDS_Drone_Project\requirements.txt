@@ -1,0 +1,16 @@
+# UPWARDS Drone Project dependencies.
+# Python 3.11 or 3.12 recommended (3.10 through 3.13 all work). Tested on 3.11.
+# Install in two steps so djitellopy does not pull a second, conflicting OpenCV.
+# djitellopy needs av and pillow to decode the video, so install those explicitly:
+#
+#   pip install opencv-contrib-python matplotlib av pillow
+#   pip install --no-deps djitellopy
+#
+# Listed here for reference:
+opencv-contrib-python>=4.8
+matplotlib>=3.7
+numpy>=1.24
+av>=10
+pillow>=9
+# djitellopy is intentionally NOT listed here, so `pip install -r requirements.txt` cannot pull the
+# conflicting opencv-python. Install it separately:  pip install --no-deps djitellopy
