@@ -22,6 +22,14 @@ def clamp(value, low, high):
     clamp(-3, 0, 10)  ->  0
     clamp(5, 0, 10)   ->  5
     """
+    if value > high:
+        return_value = high
+        return return_value
+    elif value < low:
+        return_value = low
+        return return_value
+    else:
+        return value
     # TODO: return value, but never below low and never above high.
     #       Hint: Python has min() and max().
     raise NotImplementedError
@@ -33,7 +41,12 @@ def centering_error(marker_x, frame_center):
 
     centering_error(400, 360)  ->  40
     centering_error(300, 360)  ->  -60
+
+
     """
+
+    centervalue = marker_x - frame_center
+    return centervalue
     # TODO: return the marker's x position minus the center.
     raise NotImplementedError
 
@@ -47,6 +60,13 @@ def steer_speed(error, gain, max_speed):
     steer_speed(500, 0.1, 20)  ->  20    (would be 50, but capped at 20)
     steer_speed(-500, 0.1, 20) ->  -20
     """
+    speed = error * gain
+    if abs(speed) > abs(max_speed):
+        if gain < 0 or error < 0 or max_speed < 0:
+            speed = max_speed * -1
+        else:
+            speed = max_speed
+    return speed
     # TODO: return gain * error, clamped to the range [-max_speed, max_speed].
     #       Hint: you already wrote clamp() above. You can call it here.
     raise NotImplementedError
@@ -57,10 +77,14 @@ def is_aligned(err_x, err_y, err_size, tol_center, tol_size):
     err_x and err_y must each be within tol_center of zero, and err_size within
     tol_size of zero.
 
-    is_aligned(5, -3, 2, 35, 18)   ->  True
+    is_aligned(5, -3, 2, 35, 18)   ->  Truent_code as s
+
     is_aligned(50, 0, 0, 35, 18)   ->  False   (too far left/right)
     is_aligned(0, 0, 40, 35, 18)   ->  False   (wrong distance)
     """
+    value = abs(err_x) <= tol_center and abs(err_y) <= tol_center and abs(err_size) <= tol_size
+    print(value)
+    return value
     # TODO: return True when all three errors are small enough.
     #       Hint: use abs() and the word 'and'.
     raise NotImplementedError
@@ -73,6 +97,13 @@ def decide_action(marker_id):
     This one is yours to design. Make it fit your mission and your theme.
     Marker ids: 10 SAMPLE A, 20 SAMPLE B, 30 WAYPOINT 1, 40 WAYPOINT 2, 42 HOME BASE.
     """
+    if marker_id == 10:
+        return "dance"
+    if marker_id == 20:
+        return "celebrate"
+    if marker_id == 30:
+        return "photograph"
+    return "photograph"
     # TODO: use if / elif to choose an action, and end with:  else: return "nothing"
     #       so EVERY marker gets a valid answer. check.py tests all five: 10, 20, 30, 40, 42.
     raise NotImplementedError
