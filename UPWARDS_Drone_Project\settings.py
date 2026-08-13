@@ -20,7 +20,7 @@ BASE_MARKER = 42            # the "home base" marker your drone lands on at the 
 # KI and KD do nothing with plain steer_speed (P). They come alive only in the Part 2 PID
 # stretch: build the PID class in pid_exercise.py and set USE_PID = True there (not here).
 KP_X, KI_X, KD_X = 0.04, 0.0, 0.0          # left/right
-KP_Y, KI_Y, KD_Y = 0.08, 0.0, 0.0          # up/down
+KP_Y, KI_Y, KD_Y = 0.04, 0.0, 0.0          # up/down
 KP_SIZE, KI_SIZE, KD_SIZE = 0.10, 0.0, 0.0  # forward/back (distance)
 
 # Top speeds (Tello RC units, roughly -100..100). Keep these gentle indoors.
