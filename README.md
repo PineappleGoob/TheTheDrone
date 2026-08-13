@@ -1,1 +1,1 @@
-Controlling a DJI Tello Drone using python. We did this using python with computer vision. This allowed the drone to see patterns on printed paper on the wall and go to them. After it goes to the walls it is able to do a front flip and find the next one. Does this until you finish.
+This is some python code to fully automate a DJI Tello drone, so that it can fly from paper to paper in order(with QR codes on the paper that it recognizes) until it finally reaches code 42, where it will recognize it, and then land in a specific spot. Used Virginia Tech University drone lab.
