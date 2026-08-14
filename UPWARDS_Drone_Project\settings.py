@@ -30,7 +30,7 @@ MAX_FORWARD_SPEED = 50
 SEARCH_YAW_SPEED = 15      # how fast it turns while looking for a marker
 
 # How close is "locked on"
-CENTER_TOLERANCE_PX = 20    # allowed off-center distance (pixels)
+CENTER_TOLERANCE_PX = 25    # allowed off-center distance (pixels)
 SIZE_TOLERANCE_PX = 18      # allowed error in marker size (pixels)
 SETTLE_SECONDS = 1.5        # must stay aligned this long before it counts
 
@@ -44,7 +44,7 @@ MIN_BATTERY_PERCENT = 30    # hard floor: the code refuses to fly below this.
                             # Recommended: start every flight above 70 (see DRONE_HANDBOOK).
 MAX_SEARCH_SECONDS = 60     # give up looking for a marker after this
 MAX_APPROACH_SECONDS = 40  # give up flying to a found marker after this
-STALE_SECONDS = 5.0         # if the video freezes this long in flight, land automatically
+STALE_SECONDS = 100000         # if the video freezes this long in flight, land automatically
 CONTROL_PERIOD = 0.10       # seconds between control updates
 FRAME_WIDTH, FRAME_HEIGHT = 720, 480
 
